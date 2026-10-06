@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #050505;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* INTRO */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: introOut 1s ease 3s forwards;
+}
+
+.intro-content h1 {
+  font-size: clamp(32px, 9vw, 65px);
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #00ffff,
+    #ff00ff,
+    #00ff00,
+    #ff0000
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rgbText 3s linear infinite;
+}
+
+.intro-content p {
+  letter-spacing: 8px;
+  color: #aaa;
+}
+
+.loading {
+  width: 230px;
+  height: 5px;
+  background: #222;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 25px auto;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, red, blue, lime, red);
+  animation: loading 3s linear forwards;
+}
+
+@keyframes loading {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes rgbText {
+  to {
+    background-position: 300%;
+  }
+}
+
+@keyframes introOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* CALCULATOR */
+
+.calculator {
+  width: min(95%, 430px);
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 25px;
+  background: #101010;
+  box-shadow:
+    0 0 20px #00ffff44,
+    0 0 40px #ff00ff22;
+}
+
+.calculator h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.display {
+  min-height: 80px;
+  padding: 18px;
+  margin-bottom: 15px;
+  background: #000;
+  border-radius: 15px;
+  text-align: right;
+  font-size: 30px;
+  overflow-x: auto;
+  border: 1px solid #333;
+  box-shadow: inset 0 0 15px #00ffff22;
+}
+
+.mode-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+button,
+select,
+input {
+  border: 1px solid #444;
+  border-radius: 12px;
+  background: #181818;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  transition: .12s;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.91);
+  box-shadow:
+    0 0 8px red,
+    0 0 15px cyan,
+    0 0 20px magenta;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+
+.keypad button {
+  min-height: 58px;
+  font-size: 20px;
+}
+
+.operator {
+  color: #00ffff;
+}
+
+.equal {
+  background: #00a86b;
+  font-weight: bold;
+}
+
+.scientific {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.question-box {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.question-box select,
+.question-box input {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.question-box button {
+  margin: 4px;
+}
+
+#result {
+  font-weight: bold;
+  min-height: 20px;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    padding: 12px;
+  }
+
+  .keypad button {
+    min-height: 52px;
+  }
+  }
