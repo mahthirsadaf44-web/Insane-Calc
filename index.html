@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insane Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Intro Slide -->
+  <div id="intro">
+    <div class="intro-content">
+      <h1>Sadaf Web Studios!</h1>
+      <p>PRESENTS</p>
+      <div class="loading">
+        <div class="loading-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calculator -->
+  <main class="calculator">
+
+    <h1>⚡ INSANE CALCULATOR</h1>
+
+    <div class="display" id="display">0</div>
+
+    <div class="mode-buttons">
+      <button onclick="setMode('simple')">Simple</button>
+      <button onclick="setMode('scientific')">Scientific</button>
+      <button onclick="setMode('questions')">Questions</button>
+    </div>
+
+    <!-- Scientific -->
+    <div id="scientific" class="scientific hidden">
+      <button onclick="addFunction('sin(')">sin</button>
+      <button onclick="addFunction('cos(')">cos</button>
+      <button onclick="addFunction('tan(')">tan</button>
+      <button onclick="addFunction('sqrt(')">√</button>
+      <button onclick="addFunction('log(')">log</button>
+      <button onclick="addFunction('ln(')">ln</button>
+      <button onclick="addFunction('^2')">x²</button>
+      <button onclick="addFunction('^3')">x³</button>
+      <button onclick="addFunction('!')">!</button>
+      <button onclick="addFunction('π')">π</button>
+      <button onclick="addFunction('e')">e</button>
+    </div>
+
+    <!-- Questions -->
+    <div id="questions" class="question-box hidden">
+      <select id="difficulty" onchange="newQuestion()">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+        <option>Insane</option>
+        <option>Impossible</option>
+      </select>
+
+      <p id="question">Choose a difficulty</p>
+
+      <input id="answer" type="number" placeholder="Your answer">
+
+      <button onclick="checkAnswer()">Check Answer</button>
+      <button onclick="newQuestion()">New Question</button>
+
+      <p id="result"></p>
+    </div>
+
+    <!-- Calculator Buttons -->
+    <div id="keypad" class="keypad">
+
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="backspace()">⌫</button>
+      <button onclick="addValue('(')">(</button>
+      <button onclick="addValue(')')">)</button>
+
+      <button onclick="addValue('7')">7</button>
+      <button onclick="addValue('8')">8</button>
+      <button onclick="addValue('9')">9</button>
+      <button class="operator" onclick="addValue('/')">÷</button>
+
+      <button onclick="addValue('4')">4</button>
+      <button onclick="addValue('5')">5</button>
+      <button onclick="addValue('6')">6</button>
+      <button class="operator" onclick="addValue('*')">×</button>
+
+      <button onclick="addValue('1')">1</button>
+      <button onclick="addValue('2')">2</button>
+      <button onclick="addValue('3')">3</button>
+      <button class="operator" onclick="addValue('-')">−</button>
+
+      <button onclick="addValue('0')">0</button>
+      <button onclick="addValue('.')">.</button>
+      <button class="equal" onclick="calculate()">=</button>
+      <button class="operator" onclick="addValue('+')">+</button>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+        </html>
