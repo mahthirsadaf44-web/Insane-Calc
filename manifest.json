@@ -1,0 +1,13 @@
+{
+  "background_color": "#000000",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "insane-calc.vercel",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Insane Calculator",
+  "start_url": "/",
+  "theme_color": "#000000",
+  "id": "insane-calculator",
+  "description": "A powerful calculator with Simple, Scientific and Question modes."
+}
